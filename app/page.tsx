@@ -858,7 +858,7 @@ export default function Home() {
       [...PROMPT_POOL].sort(() => Math.random() - 0.5).slice(0, 4),
     );
   useEffect(() => {
-    fetch("/netflix_titles.csv")
+    fetch("netflix_titles.csv")
       .then((r) => r.text())
       .then((t) =>
         setBase(parseCSV(t).map((r) => ({ ...r, status: "active" }))),
